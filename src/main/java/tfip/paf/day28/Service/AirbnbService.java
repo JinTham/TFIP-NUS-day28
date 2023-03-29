@@ -15,12 +15,16 @@ public class AirbnbService {
     @Autowired
     private AirbnbRepository airbnbRepo;
 
-    public Optional<List<Airbnb>> getAirbnbByDesc (String text) {
-        List<Airbnb> results = airbnbRepo.getAirbnbByDesc(text);
+    public Optional<List<Airbnb>> getAirbnbByDesc (String text, String country) {
+        List<Airbnb> results = airbnbRepo.getAirbnbByDesc(text, country);
 		if (results.isEmpty())
 			return Optional.empty();
 		// return the first result
 		return Optional.of(results);
+    }
+
+    public List<String> getCountries() {
+        return airbnbRepo.getCountries();
     }
 
 }

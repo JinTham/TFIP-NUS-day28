@@ -12,6 +12,7 @@ public class Airbnb {
     private String url;
     private String summary;
     private String description;
+    private String country;
     
     public Airbnb() {
     }
@@ -48,6 +49,14 @@ public class Airbnb {
         this.url = url;
     }
     
+    public String getCountry() {
+            return country;
+        }
+
+        public void setCountry(String country) {
+            this.country = country;
+        }
+    
     public static Airbnb toAirbnb(String jsonStr) {
         Airbnb airbnb = new Airbnb();
 		JsonReader reader = Json.createReader(new StringReader(jsonStr));
@@ -56,7 +65,10 @@ public class Airbnb {
         airbnb.setUrl(o.getString("listing_url"));
         airbnb.setSummary(o.getString("summary"));
         airbnb.setDescription(o.getString("description"));
+        JsonObject jo = o.getJsonObject("address");
+        airbnb.setCountry(jo.getString("country"));
 		return airbnb;
     }
 
+    
 }

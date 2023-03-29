@@ -7,7 +7,7 @@
 	</head>
 	<body>
 
-		<h2>Airbnb Details</h2>
+		<h2>Airbnb Details in <span data-th-text="${country}"></span></h2>
 		<a data-th-href="@{/}">
 			<button type="button">Back</button>
 		</a>
@@ -21,7 +21,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td>Description</td>
+					<td>Description:</td>
 					<td>
 						<span data-th-text="*{airbnb.description}"></span>
 					</td>

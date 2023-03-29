@@ -14,7 +14,15 @@
 				<tr>
 					<td>Airbnb Name</td>
 					<td>
-						<input type="text" name="keyword" size="30" required>
+						<input type="text" name="keyword" size="30" placeholder="Search terms" required>
+					</td>
+				</tr>
+				<tr>
+					<td>Select Country</td>
+					<td>
+						<select name="country">
+							<option data-th-each="country: ${countries}" data-th-value="${country}" data-th-text="${country}"></option>
+						</select>
 					</td>
 				</tr>
 				<tr>
