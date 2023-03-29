@@ -21,10 +21,10 @@ public class AirbnbController {
     private AirbnbService airbnbSvc;
 
     @GetMapping(path="/search")
-    public String showAirbnb(@RequestParam String text, Model model) {
-        Optional<List<Airbnb>> opt = airbnbSvc.getAirbnbByDesc(text);
+    public String showAirbnb(@RequestParam String keyword, Model model) {
+        Optional<List<Airbnb>> opt = airbnbSvc.getAirbnbByDesc(keyword);
         if (opt.isEmpty()) {
-            model.addAttribute("message", "No Airbnb with keyword '%s' inside its description".formatted(text));
+            model.addAttribute("message", "No Airbnb with keyword '%s' inside its description".formatted(keyword));
             return "notFound";
         }
         model.addAttribute("airbnbList",opt.get());

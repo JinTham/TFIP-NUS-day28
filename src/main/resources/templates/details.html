@@ -17,19 +17,7 @@
 				<tr>
 					<td>Name:</td>
 					<td>
-						<span data-th-text="*{airbnb.name}"></span>
-					</td>
-				</tr>
-				<tr>
-					<td>ID:</td>
-					<td>
-						<span data-th-text="*{airbnb.id}"></span>
-					</td>
-				</tr>
-				<tr>
-					<td>Summary:</td>
-					<td>
-						<span data-th-text="*{airbnb.summary}"></span>
+						<a th:href="@{${airbnb.url}}"><span data-th-text="*{airbnb.name}"></span></a>
 					</td>
 				</tr>
 				<tr>
@@ -40,10 +28,9 @@
 				</tr>
 			</table>
 			<hr>
-			<a data-th-href="@{/}">
-				<button type="button">Back</button>
-			</a>
 		</div>
-		
+		<a data-th-href="@{/}">
+			<button type="button">Back</button>
+		</a>
 	</body>
 </html>
