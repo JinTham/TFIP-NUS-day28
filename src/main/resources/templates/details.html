@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Airbnb</title>
+	</head>
+	<body>
+
+		<h2>Airbnb Details</h2>
+		<a data-th-href="@{/}">
+			<button type="button">Back</button>
+		</a>
+		<hr>
+		<div data-th-each="airbnb : ${airbnbList}">
+			<table>
+				<tr>
+					<td>Name:</td>
+					<td>
+						<span data-th-text="*{airbnb.name}"></span>
+					</td>
+				</tr>
+				<tr>
+					<td>ID:</td>
+					<td>
+						<span data-th-text="*{airbnb.id}"></span>
+					</td>
+				</tr>
+				<tr>
+					<td>Summary:</td>
+					<td>
+						<span data-th-text="*{airbnb.summary}"></span>
+					</td>
+				</tr>
+				<tr>
+					<td>Description</td>
+					<td>
+						<span data-th-text="*{airbnb.description}"></span>
+					</td>
+				</tr>
+			</table>
+			<hr>
+			<a data-th-href="@{/}">
+				<button type="button">Back</button>
+			</a>
+		</div>
+		
+	</body>
+</html>
