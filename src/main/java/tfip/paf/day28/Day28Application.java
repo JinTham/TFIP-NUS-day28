@@ -23,11 +23,11 @@ public class Day28Application implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) {
-		Optional<List<Airbnb>> opt = airbnbSvc.getAirbnbByDesc("sea","Brazil");
-		List<Airbnb> results = opt.get();
-		for (Airbnb airbnb : results) {
-			System.out.printf("%s\n",airbnb.getName());
-		}
+		// Optional<List<Airbnb>> opt = airbnbSvc.getAirbnbByDesc("sea","Brazil");
+		// List<Airbnb> results = opt.get();
+		// for (Airbnb airbnb : results) {
+		// 	System.out.printf("%s\n",airbnb.getName());
+		// }
 	}
 
 }

@@ -11,14 +11,15 @@ import com.mongodb.client.MongoClients;
 @Configuration
 public class AppConfig {
 
-    // @Value("${mongo.url}")
-    // private String mongoUrl;
+    @Value("${mongo.url}")
+    private String mongoUrl;
+    // set MONGO_URL="mongodb://yehjintham:hzwzffx2@ac-bdwljq9-shard-00-00.uv2zpaq.mongodb.net:27017,ac-bdwljq9-shard-00-01.uv2zpaq.mongodb.net:27017,ac-bdwljq9-shard-00-02.uv2zpaq.mongodb.net:27017/?ssl=true&replicaSet=atlas-srygrq-shard-0&authSource=admin&retryWrites=true&w=majority" 
 
-    // @Bean
-    // public MongoTemplate createTemplate() {
-    //     //mongoUrl = "mongodb://yehjintham:hzwzffx2@ac-bdwljq9-shard-00-00.uv2zpaq.mongodb.net:27017,ac-bdwljq9-shard-00-01.uv2zpaq.mongodb.net:27017,ac-bdwljq9-shard-00-02.uv2zpaq.mongodb.net:27017/?ssl=true&replicaSet=atlas-srygrq-shard-0&authSource=admin&retryWrites=true&w=majority";
-    //     MongoClient client = MongoClients.create(mongoUrl);
-    //     return new MongoTemplate(client, "shows");
-    // }
+    @Bean
+    public MongoTemplate createTemplate() {
+        //mongoUrl = "mongodb://yehjintham:hzwzffx2@ac-bdwljq9-shard-00-00.uv2zpaq.mongodb.net:27017,ac-bdwljq9-shard-00-01.uv2zpaq.mongodb.net:27017,ac-bdwljq9-shard-00-02.uv2zpaq.mongodb.net:27017/?ssl=true&replicaSet=atlas-srygrq-shard-0&authSource=admin&retryWrites=true&w=majority";
+        MongoClient client = MongoClients.create(mongoUrl);
+        return new MongoTemplate(client, "airbnb");
+    }
 
 }
